@@ -19,8 +19,8 @@
             $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
         } 
 
-myTest();
-echo $y;
+        myTest();
+        echo $y;
     ?>
 </body>
 </html>
