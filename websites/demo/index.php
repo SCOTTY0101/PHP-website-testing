@@ -9,7 +9,7 @@
 <body>
     <h1>Hell world the second</h1>
     <?php
-    //echo "<h1>Hello world</h1>";
+    echo "<h1>Hello world</h1>";
       /*  echo "is this php working";
         echo "nect line to git save point";
 
