@@ -10,6 +10,17 @@
     <?php
         echo "is this php working";
         echo "nect line to git save point";
+
+
+        $x = 5;
+        $y = 10;
+
+        function myTest() {
+            $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+        } 
+
+myTest();
+echo $y;
     ?>
 </body>
 </html>
