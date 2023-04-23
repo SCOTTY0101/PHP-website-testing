@@ -49,11 +49,12 @@
                 }
                 return $filteredBook;
            }
+           $filteredBook = filterByAuthor($books, 'Bret Fargo')
     ?>
 
         
         <ul>   
-            <?php foreach(filterByAuthor($books, 'Unknown Person') as $book) : ?>
+            <?php foreach($filteredBook as $book) : ?>
                     <li>
                         <a href=" <?= $book['buyUrl'] ?> ">
                             <?= $book['name']; ?> (<?= $book['releaseYear']?>)  <?= $book['author'] ?>

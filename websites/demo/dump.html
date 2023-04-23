@@ -70,4 +70,55 @@
     
 
 </body>
--->
+
+//Code function and filters
+<h1>Recommended Books</h1>
+
+    <?php 
+        $books = [
+            [
+               'name' =>  'I.T novel',
+                'author' => 'Bret Fargo',
+                'releaseYear' => 2001,
+                'buyUrl' => 'https://whereToBuy.com'
+            ],
+            [
+                'name' => 'I.T novel part two',
+                'author' => 'Bret Fargo',
+                'releaseYear' => 2022,
+                'buyUrl' => 'https://exaple.com'
+            ],
+            [
+                'name' => 'Learn to code in 10mins',
+                'author' => 'Unknown Person',
+                'releaseYear' => 1988,
+                'buyUrl' => 'https://takeYourMoney.com'
+            ]
+            ];
+
+           function filterByAuthor($books, $author) {
+                $filteredBook = [];
+
+                foreach ($books as $book) {
+                    if($book['author'] === $author) {
+                        $filteredBook[] = $book;
+                    }
+                }
+                return $filteredBook;
+           }
+    ?>
+
+        
+        <ul>   
+            <?php foreach(filterByAuthor($books, 'Bret Fargo') as $book) : ?>
+                    <li>
+                        <a href=" <?= $book['buyUrl'] ?> ">
+                            <?= $book['name']; ?> (<?= $book['releaseYear']?>)  <?= $book['author'] ?>
+                        </a>
+                    </li>
+            <?php endforeach; ?>
+            
+
+        </ul>
+    
+    -->
