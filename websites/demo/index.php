@@ -39,17 +39,17 @@
             ]
             ];
 
-           function filterByAuthor($books, $author) {
-                $filteredBook = [];
+           function filter($items, $key, $valve) {
+                $filteredItems = [];
 
-                foreach ($books as $book) {
-                    if($book['author'] === $author) {
-                        $filteredBook[] = $book;
+                foreach ($items as $item) {
+                    if($item[$key] === $valve) {
+                        $filteredItems[] = $item;
                     }
                 }
-                return $filteredBook;
+                return $filteredItems;
            }
-           $filteredBook = filterByAuthor($books, 'Bret Fargo')
+           $filteredBook = filter($books, 'releaseYear', 1988)
     ?>
 
         
@@ -65,38 +65,8 @@
 
         </ul>
 
-
-
     
 
 </body>
 </html>
 
-<!-- CODE DUMP
-<body>
-    BOOK TEST VARIABLE
-    <div>
-<?php /*
-    $book = "Hell";
-    $read = false;
-   // echo "$greeting Awaits you";
-   // echo "<p>ghgh</p>";
-   if ($read) {
-    $message = " boolean You read the book $book ";
-   } else {
-    $message = " boolean You haven't read the book $book ";
-   }
-    */
-    ?>
-   
-
-    <h1>
-        You read the book <?php //echo $book; ?>. <br>
-        <?php //echo $message; ?> <br>
-       
-    </h1>
-    </div>
-
-</body>
-
--->
