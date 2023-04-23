@@ -21,38 +21,39 @@
         $books = [
             [
                'name' =>  'I.T novel',
-                'author' => 'A.Vent',
+                'author' => 'Bret Fargo',
+                'releaseYear' => 2001,
                 'buyUrl' => 'https://whereToBuy.com'
             ],
             [
-                'name' => 'Second Book 2',
+                'name' => 'I.T novel part two',
                 'author' => 'Bret Fargo',
+                'releaseYear' => 2022,
                 'buyUrl' => 'https://exaple.com'
             ],
             [
                 'name' => 'Learn to code in 10mins',
                 'author' => 'Unkown Person',
+                'releaseYear' => 1988,
                 'buyUrl' => 'https://takeYourMoney.com'
             ]
             ];
+
+            function filterByAuthor() {
+                return 'filter return';
+            }
     ?>
 
-        <ul>
-            <?php foreach($books as $rtnValueArray) : ?>
-                <li>
-                    <?= $rtnValueArray['author'] ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-
-
+        
         <ul>   
             <?php foreach($books as $book) : ?>
-                <li>
-                    <a href=" <?= $book['buyUrl'] ?> ">
-                        <?= $book['name']; ?>
-                    </a>
-                </li>
+                <?php if($book['author'] === 'Bret Fargo') : ?>
+                    <li>
+                        <a href=" <?= $book['buyUrl'] ?> ">
+                            <?= $book['name']; ?> (<?= $book['releaseYear']?>)  <?= $book['author'] ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
             <?php endforeach; ?>
             
 
@@ -60,7 +61,9 @@
 
 
 
-    <p></p>
+    <p>
+        <?= filterByAuthor(); ?>
+    </p>
 
 </body>
 </html>
