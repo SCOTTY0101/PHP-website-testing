@@ -19,20 +19,40 @@
 
     <?php 
         $books = [
-            "I.T novel",
-            "Second Book",
-            "Learn to code in 10mins"
-        ];
+            [
+               'name' =>  'I.T novel',
+                'author' => 'A.Vent',
+                'buyUrl' => 'https://whereToBuy.com'
+            ],
+            [
+                'name' => 'Second Book 2',
+                'author' => 'Bret Fargo',
+                'buyUrl' => 'https://exaple.com'
+            ],
+            [
+                'name' => 'Learn to code in 10mins',
+                'author' => 'Unkown Person',
+                'buyUrl' => 'https://takeYourMoney.com'
+            ]
+            ];
     ?>
 
         <ul>
-            <?php foreach ($books as $book) {
-                
-                echo "<li>{$book}</li>";
-            }
-            ?>
+            
+            <?php foreach($books as $book) : ?>
+                <li>
+                    <a href=" <?= $book['buyUrl'] ?> ">
+                        <?= $book['name']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+            
+
         </ul>
-    
+
+
+
+    <p></p>
 
 </body>
 </html>
