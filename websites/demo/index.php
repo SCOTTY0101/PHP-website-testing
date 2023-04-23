@@ -38,7 +38,15 @@
     ?>
 
         <ul>
-            
+            <?php foreach($books as $rtnValueArray) : ?>
+                <li>
+                    <?= $rtnValueArray['author'] ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+
+        <ul>   
             <?php foreach($books as $book) : ?>
                 <li>
                     <a href=" <?= $book['buyUrl'] ?> ">
