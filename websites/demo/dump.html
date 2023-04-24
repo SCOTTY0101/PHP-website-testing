@@ -1,5 +1,17 @@
-
-
+<!--
+array function the foreach loop filter
+<h1>Recommended Books</h1>
+        
+        <ul>   
+            <?php foreach($filteredBook as $book) : ?>
+                    <li>
+                        <a href=" <?= $book['buyUrl'] ?> ">
+                            <?= $book['name']; ?> (<?= $book['releaseYear']?>)  <?= $book['author'] ?>
+                        </a>
+                    </li>
+            <?php endforeach; ?>
+        </ul>
+    -->
 
 
 
