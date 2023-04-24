@@ -39,17 +39,10 @@
             ]
             ];
 
-           function filter($items, $key, $valve) {
-                $filteredItems = [];
-
-                foreach ($items as $item) {
-                    if($item[$key] === $valve) {
-                        $filteredItems[] = $item;
-                    }
-                }
-                return $filteredItems;
-           }
-           $filteredBook = filter($books, 'releaseYear', 1988)
+          
+           $filteredBook = array_filter($books, function($book) {
+            return $book['releaseYear'] > 1988;
+           })
     ?>
 
         

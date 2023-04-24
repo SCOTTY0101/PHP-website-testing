@@ -149,5 +149,17 @@
     </div>
 
 </body>
+// array_filter does same thing.
+
+function filter($items, $fn) {
+                $filteredItems = [];
+
+                foreach ($items as $item) {
+                    if($fn($item)) {
+                        $filteredItems[] = $item;
+                    }
+                }
+                return $filteredItems;
+           }
 
 -->
