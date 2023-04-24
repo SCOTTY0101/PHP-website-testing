@@ -25,3 +25,5 @@
             return $book['releaseYear'] > 1988;
            })
     ?>
+
+<?php require "index.view.php"; ?>
