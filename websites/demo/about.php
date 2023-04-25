@@ -3,4 +3,4 @@
 
 ?>
 
-<?php require "about.view.php" ?>
+<?php require "views/about.view.php" ?>

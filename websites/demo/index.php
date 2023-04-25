@@ -26,4 +26,4 @@
            })
     ?>
 
-<?php require "index.view.php"; ?>
+<?php require "views/index.view.php"; ?>
