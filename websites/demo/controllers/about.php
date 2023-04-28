@@ -1,2 +1,4 @@
-<?php $heading = "About Page"; ?>
-<?php require "views/about.view.php" ?>
+<?php 
+
+$heading = "About Page"; 
+require "views/about.view.php";

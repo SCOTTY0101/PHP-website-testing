@@ -8,5 +8,7 @@ function dd($value) {
    }
    
 
-   $string1 = "stringValue";
-   dd(['$string1']);
+
+   function urlIs($value) {
+        return $_SERVER['REQUEST_URI'] === $value ?  'bg-gray-900 text-white' : 'text-gray-300';
+   }
