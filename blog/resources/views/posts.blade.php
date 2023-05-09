@@ -9,7 +9,16 @@
    <!-- <script src="/app.js"></script> -->
 </head>
 <body>
-    <article>
+   <?php foreach($posts as $post) : ?>
+        <article>
+            <?= $post; ?>
+        </article>
+   <?php endforeach ?>
+    
+</body>
+</html>
+
+<!--  <article>
         <h1><a href="/post/my-first-post">My First Blog</a></h1>
         <p>
             Lorem  POSTS PHP ipsum dolor sit amet consectetur adipisicing elit. 
@@ -39,7 +48,4 @@
         </p>
     </article>
     
-    
-    
-</body>
-</html>
+    -->

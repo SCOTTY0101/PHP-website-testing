@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,28 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+   // return Post::find('my-first-post');
     return view('posts');
     
 });
 
+// /{post} Wildcard passed to function($slug) value for .html page. 
 Route::get('post/{post}', function($slug) {
-    //return  $slug;
-    //$path = (__DIR__ . "/../resources/posts/{$slug}.html");
+     // Find a post by its slug  and pass it to a view called 'post'
+   //  $post = Post::find($slug);
 
-    //ddd($path);
-    
-    if (! file_exists($path = (__DIR__ . "/../resources/posts/{$slug}.html"))) {
-        return redirect('/');
-        //return ddd('file does not exist.');
-        //abort(404);
-    };
-
-    $post = cache()->remember("posts.{$slug}", 5, fn() => file_get_contents($path));
-       // var_dump('file_get_contents');
-
-    
-   # $post = file_get_contents($path);
-    
-    return view('post', [ 'post' => $post ]); 
-})->where('post', '[A-z_\-]+');     //->whereAlpha('post');  Method, command +click            //->where('post', '[A-z_-\]+');
-//Route::get('register', [RegisterController::class, 'create']);
+     return view('post', [
+         'post' => Post::find($slug)
+     ]);
+})->where('post', '[A-z_\-]+');  
