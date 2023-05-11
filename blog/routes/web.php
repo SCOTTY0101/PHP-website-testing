@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-//use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Yaml\Yaml;
 
@@ -17,12 +17,15 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
-Route::get('/', function () {
- 
-  //ddd($document)->body();
+Route::get('/', function() {
+  $document = YamlFrontMatter::parseFile(
+   resource_path('posts/my-fourth-post.html')
+  );
+  ddd($document->date);
 });
 
-// /{post} Wildcard passed to function($slug) value for .html page. 
+
+
 Route::get('post/{post}', function($slug) {
      // Find a post by its slug  and pass it to a view called 'post'
    //  $post = Post::find($slug);

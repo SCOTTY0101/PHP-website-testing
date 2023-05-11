@@ -16,7 +16,7 @@ class Post
     }
 
     public static function find($slug) {
-        base_path();
+       // base_path();
         if (! file_exists($path = resource_path("/posts/{$slug}.html"))) {
                 throw new ModelNotFoundException();
                  //return redirect('/'); //Move to routes dir.
