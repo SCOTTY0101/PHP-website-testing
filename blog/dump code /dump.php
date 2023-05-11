@@ -23,3 +23,30 @@
 //->whereAlpha('post');  Method, command +click            
 //->where('post', '[A-z_-\]+');
 //Route::get('register', [RegisterController::class, 'create']);
+
+
+ /*$document = YamlFrontMatter::parseFile(
+    resource_path("posts/my-forth-post.html")
+  );*/
+  
+  /*  return view('posts', [
+        'posts' => Post::all()
+    ]);*/
+   // ddd($document->title);
+
+
+/*
+   public $title;
+   public $excerpt;
+   public $date;
+   public $body;
+
+   public function __construct($title, $excerpt, $date, $body) 
+   {
+       $this->title = $title;
+       $this->$excerpt = $excerpt;
+       $this->$date = $date;
+       $this->$body = $body;
+   }
+       
+   */

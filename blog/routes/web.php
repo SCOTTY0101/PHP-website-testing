@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+//use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Illuminate\Support\Facades\File;
+use Symfony\Component\Yaml\Yaml;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +18,8 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::all()
-    ]);
-    
+ 
+  //ddd($document)->body();
 });
 
 // /{post} Wildcard passed to function($slug) value for .html page. 

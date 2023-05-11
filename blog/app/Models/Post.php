@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\File;
 
 class Post 
 {
+    
+
     public static function all() {
         $files = File::files(resource_path("posts/"));
 

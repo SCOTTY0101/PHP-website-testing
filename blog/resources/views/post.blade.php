@@ -12,7 +12,7 @@
 
     <article>
         <!--Entry point for post.blade.php (blog * n pages) into web.php-->
-        {{ $post; }}  
+        <?= $post; ?>  
     </article>
     <p><a href="/">home page</a></p>
     
