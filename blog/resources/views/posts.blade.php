@@ -14,12 +14,12 @@
             <h1>
                 <!-- Change /posts/ to /post/. Bage home page now works????-->
                 <a href="/posts/<?= $post->slug; ?>">
-                    <?= $post->title; ?>
+                    {{ $post->title; }}
                 </a>    
             </h1>
 
             <div>
-                <?= $post->excerpt; ?>
+                {{ $post->excerpt; }}
             </div>
         </article>
    <?php endforeach ?>
