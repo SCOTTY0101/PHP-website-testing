@@ -17,19 +17,15 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
-Route::get('/', function() {
-  $document = YamlFrontMatter::parseFile(
-   resource_path('posts/my-fourth-post.html')
-  );
-  ddd($document->date);
+Route::get('/', function() { 
+  return view('posts', [
+    'posts' => Post::all()
+  ]);
 });
 
 
 
-Route::get('post/{post}', function($slug) {
-     // Find a post by its slug  and pass it to a view called 'post'
-   //  $post = Post::find($slug);
-
+Route::get('posts/{post}', function($slug) {
      return view('post', [
          'post' => Post::find($slug)
      ]);

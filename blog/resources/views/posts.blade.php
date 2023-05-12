@@ -11,7 +11,16 @@
 <body>
    <?php foreach($posts as $post) : ?>
         <article>
-            <?= $post; ?>
+            <h1>
+                <!-- Change /posts/ to /post/. Bage home page now works????-->
+                <a href="/posts/<?= $post->slug; ?>">
+                    <?= $post->title; ?>
+                </a>    
+            </h1>
+
+            <div>
+                <?= $post->excerpt; ?>
+            </div>
         </article>
    <?php endforeach ?>
     

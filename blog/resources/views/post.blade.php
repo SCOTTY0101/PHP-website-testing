@@ -11,8 +11,12 @@
 <body>
 
     <article>
-        <!--Entry point for post.blade.php (blog * n pages) into web.php-->
-        <?= $post; ?>  
+        <h1>
+            <?= $post->title; ?>
+        </h1>
+        <div>
+            <?= $post->body; ?>
+        </div>
     </article>
     <p><a href="/">home page</a></p>
     

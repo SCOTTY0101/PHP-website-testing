@@ -34,6 +34,12 @@
     ]);*/
    // ddd($document->title);
 
+/*$document = YamlFrontMatter::parseFile(
+   resource_path('posts/my-fourth-post.html')
+  );
+  
+ //ddd(); */
+
 
 /*
    public $title;
@@ -48,5 +54,64 @@
        $this->$date = $date;
        $this->$body = $body;
    }
-       
    */
+
+/* //Google bard AI
+class User {
+
+    private $username;
+    private $password;
+
+    public function __construct($username, $password) {
+        $this->username = $username;
+        $this->password = $password;
+    }
+
+    public function login() {
+        // Check if the username and password are valid.
+        $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$this->username, $this->password]);
+
+        if ($stmt->rowCount() > 0) {
+            // Login successful.
+            $_SESSION['user'] = $this->username;
+            return true;
+        } else {
+            // Login failed.
+            return false;
+        }
+    }
+
+    public function logout() {
+        // Destroy the session.
+        session_destroy();
+    }
+
+} */
+
+/**$posts = array_map(function($file) {
+    $documents = YamlFrontMatter::parseFile($file);
+      return new Post(
+        $documents->title,
+        $documents->excerpt,
+        $documents->date,
+        $documents->body(),
+        $documents->slug
+      );
+    }, $files); */
+
+    /* $files = File::files(resource_path("posts/"));
+
+        //return array_map(fn($file) => $file->getContents(), $files); */
+        
+    /**public static function find($slug) 
+    {
+       // base_path();
+        if (! file_exists($path = resource_path("/posts/{$slug}.html"))) {
+                throw new ModelNotFoundException();
+                 //return redirect('/'); //Move to routes dir.
+             };
+        
+            return cache()->remember("posts.{$slug}", 1200, fn() => file_get_contents($path)); //Use fast cache memory
+    } */
