@@ -15,7 +15,7 @@
             <?= $post->title; ?>
         </h1>
         <div>
-            <?= $post->body; ?>
+            {!! $post->body; !!}
         </div>
     </article>
     <p><a href="/">home page</a></p>
