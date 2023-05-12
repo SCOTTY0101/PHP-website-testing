@@ -9,11 +9,12 @@
    <!-- <script src="/app.js"></script> -->
 </head>
 <body>
-   <?php foreach($posts as $post) : ?>
+    @foreach($posts as $post)
+    @dd($loop);
         <article>
             <h1>
                 <!-- Change /posts/ to /post/. Bage home page now works????-->
-                <a href="/posts/<?= $post->slug; ?>">
+                <a href="/posts/{{ $post->slug; }}">
                     {{ $post->title; }}
                 </a>    
             </h1>
@@ -22,7 +23,7 @@
                 {{ $post->excerpt; }}
             </div>
         </article>
-   <?php endforeach ?>
+    @endforeach
     
 </body>
 </html>
