@@ -9,6 +9,10 @@
    <!-- <script src="/app.js"></script> -->
 </head>
 <body>
-   @yield('content') 
+    <header>
+        @yield('banner')
+    </header>
+    {{ 'content' }}
+  <!-- @yield('content') -->
 </body>
 </html>
