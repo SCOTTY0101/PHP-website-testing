@@ -9,10 +9,12 @@
    <!-- <script src="/app.js"></script> -->
 </head>
 <body>
-    <header>
-        @yield('banner')
-    </header>
-    {{ $slot }}
+    
+    <div>
+        {{ $content }}
+    </div>
+
+   
   <!-- @yield('content') -->
 </body>
 </html>
