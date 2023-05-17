@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Category;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Yaml\Yaml;
@@ -19,20 +20,26 @@ use Symfony\Component\Yaml\Yaml;
 
 Route::get('/', function() { 
   return view('posts', [
-    'posts' => Post::all()
+    'posts' => Post::with('category')->get()
   ]);
 });
 
 
-Route::get('posts/{post}', function($id) {
+Route::get('posts/{post:slug}', function(Post $post) {
   return view('post', [
-      'post' => Post::findOrFail($id)
+      'post' => $post
   ]);
 });
 
-/*Route::get('posts/{post}', function($slug) {
+Route::get('categories/{category:slug}', function(Category $category) {
+  return view('posts', [
+    'posts' => $category->posts
+  ]);
+});
+
+/*Route::get('posts/{post}', function($slug) // (id) {
   return view('post', [
-      'post' => Post::findOrFail($slug)
+      'post' => Post::findOrFail($slug) //(id)
   ]);
 });*/
 //->where('post', '[A-z_\-]+');  

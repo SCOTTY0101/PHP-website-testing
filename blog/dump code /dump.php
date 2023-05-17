@@ -139,3 +139,7 @@ class User {
     @endforeach
 @endsection
 */
+
+/**\Illuminate\Support\Facades\DB::listen(function($query) {
+    logger($query->sql, $query->bindings);
+  }); */ //Log debugger. Very heavy. empty.
