@@ -43,8 +43,8 @@ class DatabaseSeeder extends Seeder
             'category_id' => $family->id,
             'title' => 'My Family Post',
             'slug' => 'my-first-post',
-            'excerpt' => 'More about the first post inside.',
-            'body' => 'FIRST BODY BODT INFO jdjdjdjdjdjdjdjdjdjdjjjjd END END END'
+            'excerpt' => '<p>More about the first post inside.</p>',
+            'body' => '<p>FIRST BODY BODT INFO jdjdjdjdjdjdjdjdjdjdjjjjd END END END</p>'
         ]);
 
         Post::create([
@@ -52,8 +52,8 @@ class DatabaseSeeder extends Seeder
             'category_id' => $work->id,
             'title' => 'My Work Post',
             'slug' => 'my-work-post',
-            'excerpt' => 'More about the WORK post inside.',
-            'body' => 'WORK WORK WORK WORK WORK na na na. BODT INFO jdjdjdjdjdjdjdjdjdjdjjjjd END END END'
+            'excerpt' => '<p>More about the WORK post inside.</p>',
+            'body' => '<p>WORK WORK WORK WORK WORK na na na. BODT INFO jdjdjdjdjdjdjdjdjdjdjjjjd END END END</p>'
         ]);
 
 
