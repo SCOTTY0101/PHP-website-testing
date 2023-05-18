@@ -16,12 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::truncate();
-        Post::truncate();
-        Category::truncate();
+       //Only use seeders on db refresh
+       // User::truncate();
+       // Post::truncate();
+       // Category::truncate();
 
-
-         $user = User::factory()->create();
+        //factory(5) Add size in number inside brackets
+        Post::factory()->create();
+     /*    $user = User::factory()->create();
 
         $personal = Category::create([
             'name' => 'Personal',
@@ -54,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'my-work-post',
             'excerpt' => '<p>More about the WORK post inside.</p>',
             'body' => '<p>WORK WORK WORK WORK WORK na na na. BODT INFO jdjdjdjdjdjdjdjdjdjdjjjjd END END END</p>'
-        ]);
+        ]);*/
 
 
         // \App\Models\User::factory()->create([

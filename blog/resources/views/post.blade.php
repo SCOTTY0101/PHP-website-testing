@@ -2,7 +2,7 @@
     <x-slot name="content">
             <article>
                 <h1>
-                    {!! $post->title; !!}
+                    {!! $post->title !!}
                 </h1>
 
                 <p>

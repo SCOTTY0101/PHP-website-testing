@@ -2,12 +2,13 @@
 
 <x-layout> 
     <x-slot name="content">
+        
       <div> 
     @foreach($posts as $post)
         <article class="{{ $loop->even ? 'foo' : ''}}">
             <h1>
                 <a href="/posts/{{ $post->slug; }}">
-                    {{ $post->title; }}
+                    {{ $post->title }}
                 </a>    
             </h1>
 
