@@ -24,4 +24,7 @@
     @endforeach
       </div>
     </x-slot>
+    <X-slot name="slot">
+        <h1>HEll world the return.</h1>
+    </X-slot>
 </x-layout>
