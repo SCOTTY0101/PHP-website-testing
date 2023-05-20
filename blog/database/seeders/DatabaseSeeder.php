@@ -21,8 +21,13 @@ class DatabaseSeeder extends Seeder
        // Post::truncate();
        // Category::truncate();
 
+       $user = User::factory()->create([
+            'name' => 'John Wick'
+        ]);
         //factory(5) Add size in number inside brackets
-        Post::factory()->create();
+        Post::factory(5)->create([
+            'user_id' => $user->id
+        ]);
      /*    $user = User::factory()->create();
 
         $personal = Category::create([
