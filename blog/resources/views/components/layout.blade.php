@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<!doctype html>
+<!-- <!doctype html> -->
 
 <title>Tailwind Blade Blog</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -27,7 +27,8 @@
             </div>
         </nav>
 
-        {{ $slot }}
+        {{ $str }}
+      
         
        
         <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
@@ -59,6 +60,5 @@
         </footer>
     </section>
 </body>
-
-
+</html>
 
