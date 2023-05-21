@@ -28,6 +28,7 @@
         </nav>
 
         {{ $str }}
+        {{ $content }}
       
         
        
