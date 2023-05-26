@@ -168,3 +168,16 @@ class User {
   </g>
 </svg>
 */
+
+/*
+ <div x-data="{ show : false }" @click.away="show = false">
+                    <botton @click="show = !show" class="flex-inline p-2 pl-3 pr-9 text-sm font-semibold">
+                        Categories
+                    </botton>
+                    <div x-show="show" class="grid absolute w-full mt-4 bg-gray-100" style="display: none">
+                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">One</a>
+                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">Two</a>
+                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">Three</a>
+                    </div>
+                </div> 
+*/

@@ -8,7 +8,7 @@
             
                     <x-card-post 
                     :post="$post" 
-                    class="{{ $loop->iteration < 3 ? 'col-span-3' : 'col-span-2 bg-red-500'}}"
+                    class="{{ $loop->iteration < 3 ? 'col-span-3' : 'col-span-2 bg-400-500'}}"
                     />
                 @endforeach
             </div>
