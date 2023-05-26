@@ -20,16 +20,20 @@
                 <div x-data="{ show : false }" @click.away="show = false">
 
                     <botton @click="show = !show" class="flex-inline p-2 pl-3 pr-9 text-sm font-semibold">
-                        Categories
+                        {{ isset( $currentCategory ) ? ucwords($currentCategory->name) : 'Drop Down Category'}}
+                      
                     </botton>
 
                     <div x-show="show" class="grid absolute w-full mt-4 bg-gray-100" style="display: none">
-                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">One</a>
-                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">Two</a>
-                        <a href="#" class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l">Three</a>
+                        @foreach ( $categories as $category )
+                            <a href="/categories/{{ $category->slug }}"
+                            class="grid text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l"
+                            >{{ ucwords($category->name) }}
+                            </a>
+                        @endforeach
                     </div>
-                </div> 
-                
+             </div> 
+
                 <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                         height="22" viewBox="0 0 22 22">
                         <g fill="none" fill-rule="evenodd">

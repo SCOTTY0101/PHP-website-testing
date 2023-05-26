@@ -35,13 +35,16 @@ Route::get('posts/{post:slug}', function(Post $post) {
 
 Route::get('categories/{category:slug}', function(Category $category) {
   return view('posts', [
-    'posts' => $category->posts    //->load(['category', 'author']) Move to Post.php(protected)
+    'posts' => $category->posts, //->load(['category', 'author']) Move to Post.php(protected)
+    'currentCategory' => $category,
+    'categories' => Category::all()
   ]);
 });
 
 Route::get('authors/{author:username}', function(User $author) {
   return view('posts', [
-    'posts' => $author->posts     //->load(['category', 'author']) //Stop n+ 1.
+    'posts' => $author->posts,     //->load(['category', 'author']) //Stop n+ 1.
+    'categories' => Category::all()
   ]);
 });
 
