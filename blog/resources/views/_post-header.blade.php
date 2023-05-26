@@ -20,7 +20,7 @@
     <div x-data="{ show : false }">
         <botton @click="show = !show">Categories</botton>
 
-        <div x-show="show">
+        <div x-show="show" class="grid">
             <a href="#">One</a>
             <a href="#">Two</a>
             <a href="#">Three</a>
