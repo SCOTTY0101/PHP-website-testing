@@ -199,3 +199,9 @@ class User {
         @endforeach
     </div>
 */
+
+/*
+<botton @click="show = !show" class="flex-inline p-2 pl-3 pr-9 text-sm font-semibold">
+{{-- isset( $currentCategory ) ? ucwords($currentCategory->name) : 'Drop Down Category' --}}
+</botton>
+*/
