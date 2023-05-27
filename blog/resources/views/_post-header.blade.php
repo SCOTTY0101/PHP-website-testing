@@ -25,9 +25,15 @@
                     </botton>
 
                     <div x-show="show" class="grid absolute w-full mt-4 bg-gray-100" style="display: none">
+                        <a href="/"
+                        class="text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l"
+                    >All</a>
+
                         @foreach ( $categories as $category )
                             <a href="/categories/{{ $category->slug }}"
-                            class="grid text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l"
+                            class="grid text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l
+                            {{ isset($currentCategory) && $currentCategory-> id === $category->id ? 'bg-blue-500' : ''}}
+                            "
                             >{{ ucwords($category->name) }}
                             </a>
                         @endforeach
