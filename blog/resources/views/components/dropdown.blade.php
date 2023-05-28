@@ -8,7 +8,7 @@
     </div>
 
     {{-- Links on dropdown --}}
-    <div x-show="show" class="grid absolute w-full mt-4 bg-gray-100" style="display: none">
+    <div x-show="show" class="grid absolute w-full mt-4 bg-gray-100 z-50 overflow-auto max-h-20" style="display: none">
         {{ $slot }}
     </div>
 </div> 
