@@ -193,6 +193,8 @@ class User {
             <a href="/categories/{{ $category->slug }}"
             class="grid text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l
             {{ isset($currentCategory) && $currentCategory-> id === $category->id ? 'bg-blue-500' : ''}}
+            {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-blue-500' : ''}}
+            
             "
             >{{ ucwords($category->name) }}
             </a>
@@ -204,4 +206,31 @@ class User {
 <botton @click="show = !show" class="flex-inline p-2 pl-3 pr-9 text-sm font-semibold">
 {{-- isset( $currentCategory ) ? ucwords($currentCategory->name) : 'Drop Down Category' --}}
 </botton>
+   {{-- {{ isset($currentCategory) && $currentCategory-> id === $category->id ? 'bg-blue-500' : ''}} --}}
+
+    <x-dropdown-item href="/">All</x-dropdown-item>
+
+                @foreach ( $categories as $category )
+                    <x-dropdown-item 
+                        href="/categories/{{ $category->slug }}"
+                        :active="isset($currentCategory) && $currentCategory->is($category)"
+                       //  :active="request()->is('categories/' . $category->slug)"
+                       //:active="request()->is('*' . $category->slug)" // Wildcard. Not as targeted.
+                       // :active='request()->is("categories/.{$category->slug}")'
+                        >{{ ucwords($category->name) }}
+                    </x-dropdown-item>            
+                @endforeach
+            </x-dropdown>
+
+//<x-down-arrow class="absolute pointer-events-none" style="right: 12px;"></x-down-arrow>
 */
+
+/*
+<svg {{ $attributes(['class' => 'transform -rotate-90']) }} width="22" height="22" viewBox="0 0 22 22">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
+            </path>
+        <path fill="#222"
+        d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
+    </g>
+</svg> * */
