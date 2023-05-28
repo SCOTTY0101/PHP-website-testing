@@ -34,17 +34,14 @@
                 </botton>
             </x-slot>
             
-                <x-dropdown-item>
-                    All
-                </x-dropdown-item>
+                <x-dropdown-item href="/">All</x-dropdown-item>
 
                 @foreach ( $categories as $category )
-                    <a href="/categories/{{ $category->slug }}"
-                    class="grid text-left px-4 hover:bg-blue-400 focus:bg-400-400 rounded-l
-                    {{ isset($currentCategory) && $currentCategory-> id === $category->id ? 'bg-blue-500' : ''}}
-                    "
-                    >{{ ucwords($category->name) }}
-                    </a>
+                    <x-dropdown-item 
+                        href="/categories/{{ $category->slug }}"
+                        :active="isset($currentCategory) && $currentCategory-> id === $category->id"
+                        >{{ ucwords($category->name) }}
+                    </x-dropdown-item>            
                 @endforeach
             </x-dropdown>
         </div> 
