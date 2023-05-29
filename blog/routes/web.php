@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Yaml\Yaml;
@@ -19,21 +20,7 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
-Route::get('/', function() { 
-  $posts = Post::latest();
-  if (request('search')) {
-    $posts
-      ->where('title', 'like', '%' . request('search') . '%')
-      ->orWhere('body', 'like', '%' . request('search') . '%');
-  }
- 
-  return view('posts', [
-
-    'posts' => $posts->get(),
-    //'posts' => Post::latest()->get()
-    //'posts' => Post::latest()->with(['category', 'author'])->get(),
-    'categories' => Category::all()
-  ]);
+Route::get('/', [ PostController::class, 'index' ], function() { 
 })->name('home');
 
 
