@@ -278,3 +278,15 @@ class User {
     >Read Mor {!! $post->title !!}</a>
 </div>
 */
+
+/*
+Route::get('/', [ PostController::class, 'index' ], function() { 
+})->name('home');
+
+
+Route::get('posts/{post:slug}', function(Post $post) {
+  return view('post', [
+      'post' => $post
+  ]);
+});
+*/
