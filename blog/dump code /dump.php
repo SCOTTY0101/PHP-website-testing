@@ -301,3 +301,14 @@ Route::get('posts/{post:slug}', function(Post $post) {
             return $posts->get();
     }
     */
+/*
+Route::get('categories/{category:slug}', function(Category $category) {
+  return view('posts', [
+    'posts' => $category->posts, //->load(['category', 'author']) Move to Post.php(protected)
+    'currentCategory' => $category,
+    'categories' => Category::all()
+  ]);
+})->name('category');
+
+//'currentCategory' => Category::where('slug', request('category'))->first() 
+*/
