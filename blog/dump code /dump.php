@@ -312,3 +312,10 @@ Route::get('categories/{category:slug}', function(Category $category) {
 
 //'currentCategory' => Category::where('slug', request('category'))->first() 
 */
+
+/*Route::get('posts/{post}', function($slug) // (id) {
+  return view('post', [
+      'post' => Post::findOrFail($slug) //(id)
+  ]);
+});*/
+//->where('post', '[A-z_\-]+');  

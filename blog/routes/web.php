@@ -31,13 +31,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show' ]);
 Route::get('authors/{author:username}', function(User $author) {
   return view('posts', [
     'posts' => $author->posts,     //->load(['category', 'author']) //Stop n+ 1.
-    'categories' => Category::all()
+ 
   ]);
 });
 
-/*Route::get('posts/{post}', function($slug) // (id) {
-  return view('post', [
-      'post' => Post::findOrFail($slug) //(id)
-  ]);
-});*/
-//->where('post', '[A-z_\-]+');  
