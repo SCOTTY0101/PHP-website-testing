@@ -6,6 +6,5 @@
  if ($active) $classes = 'bg-blue-500';
 @endphp
 
-<a {{ $attributes(['class' => $classes]) }}
-> {{ $slot }} 
+<a {{ $attributes(['class' => $classes]) }}> {{ $slot }} 
 </a>

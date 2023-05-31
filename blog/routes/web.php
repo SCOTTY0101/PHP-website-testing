@@ -20,8 +20,7 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
-Route::get('/', [ PostController::class, 'index' ], function() { 
-})->name('home');
+Route::get('/', [ PostController::class, 'index' ])->name('home');
 
 
 Route::get('posts/{post:slug}', [PostController::class, 'show' ]);
