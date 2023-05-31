@@ -319,3 +319,12 @@ Route::get('categories/{category:slug}', function(Category $category) {
   ]);
 });*/
 //->where('post', '[A-z_\-]+');  
+
+/*
+
+Route::get('authors/{author:username}', function(User $author) {
+  return view('posts.index', [
+    'posts' => $author->posts     //->load(['category', 'author']) //Stop n+ 1.
+  ]);
+});
+*/
