@@ -328,3 +328,8 @@ Route::get('authors/{author:username}', function(User $author) {
   ]);
 });
 */
+/*
+return Post::latest()->filter(
+            request(['search', 'category', 'author'])
+        )->paginate(5);
+*/
