@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
-use App\Models\Category;
-use App\Models\Post;
-use App\Models\User;
+//use App\Models\Category;
+//use App\Models\Post;
+//use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Support\Facades\File;
-use Symfony\Component\Yaml\Yaml;
+//use Spatie\YamlFrontMatter\YamlFrontMatter;
+//use Illuminate\Support\Facades\File;
+//use Symfony\Component\Yaml\Yaml;
 
 /*
 |--------------------------------------------------------------------------
