@@ -1,8 +1,9 @@
 <x-layout>
     <section>
-        <main class="max-w-lg mx-auto mt-10 bg-gray-100 border-gray-200 p-6 rounded-xl">
-            <h1>Hell world is back.</h1>
+        <main class="max-w-lg mx-auto mt-10 bg-blue-100 border-gray-200 p-6 rounded-xl">
+            <h1 class="text-center font-bold text-xl">Register here</h1>
                 <form method="POST" action="/register" class="mt-10">
+                    @csrf <!--Stop Cross Site Script Attacks.-->
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                            for="name"
@@ -10,12 +11,13 @@
                         Name
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input class="border border-gray-400 rounded-md p-2 w-full"
                            type="text"
                            name="name"
                            id="name"
                            required
                     >
+                    
                 </div>
 
                 <div class="mb-6">
@@ -25,7 +27,7 @@
                         Username
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input class="border border-gray-400 rounded-md p-2 w-full"
                            type="text"
                            name="username"
                            id="username"
@@ -40,7 +42,7 @@
                         Email
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input class="border border-gray-400 rounded-md p-2 w-full"
                            type="email"
                            name="email"
                            id="email"
@@ -55,7 +57,7 @@
                         Password
                     </label>
 
-                    <input class="border border-gray-400 p-2 w-full"
+                    <input class="border border-gray-400 rounded-md p-2 w-full"
                            type="password"
                            name="password"
                            id="password"

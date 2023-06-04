@@ -9,4 +9,15 @@ class RegisterController extends Controller
     public function create() {
         return view('register.create');
     }
+
+    public function store() {
+        var_dump(request()->all());
+        // create the user
+       /* request()->validate([
+            'name' => ['required', 'max:255'],
+            'username' => ['required', 'min:3', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'password' => ['required', 'min:12', 'max:255']
+        ]);*/
+    }
 }
