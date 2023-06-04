@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -11,13 +12,16 @@ class RegisterController extends Controller
     }
 
     public function store() {
-        var_dump(request()->all());
+       // return request()->all();
         // create the user
-       /* request()->validate([
+        $attribute = request()->validate([
             'name' => ['required', 'max:255'],
             'username' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'min:12', 'max:255']
-        ]);*/
+        ]);
+        ///dd('success validation succeeded'); //Views if Passes, else Fails.
+        User::create($attribute);
+        return redirect('/');
     }
 }
