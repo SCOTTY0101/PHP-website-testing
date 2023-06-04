@@ -20,6 +20,8 @@ class RegisterController extends Controller
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'min:12', 'max:255']
         ]);
+
+        $attribute['password'] = bcrypt($attribute['password']);
         ///dd('success validation succeeded'); //Views if Passes, else Fails.
         User::create($attribute);
         return redirect('/');
