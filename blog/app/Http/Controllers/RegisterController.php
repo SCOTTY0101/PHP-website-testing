@@ -14,7 +14,7 @@ class RegisterController extends Controller
     public function store() {
        // return request()->all();
         // create the user
-        $attribute = request()->validate([
+        $attributes = request()->validate([
             'name' => ['required', 'max:255'],
             'username' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
        // $attribute['password'] = bcrypt($attribute['password']);
         ///dd('success validation succeeded'); //Views if Passes, else Fails.
-        User::create($attribute);
+        User::create($attributes);
         return redirect('/');
     }
 }
